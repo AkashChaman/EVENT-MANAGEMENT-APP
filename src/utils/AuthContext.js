@@ -25,21 +25,31 @@ export const AuthProvider = ({ children }) => {
 
   // Sign up function
   const signup = (email, password) => {
+    if (!auth) return Promise.reject(new Error('Firebase not initialized'));
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   // Login function
   const login = (email, password) => {
+    if (!auth) return Promise.reject(new Error('Firebase not initialized'));
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   // Logout function
   const logout = () => {
+    if (!auth) return Promise.reject(new Error('Firebase not initialized'));
     return signOut(auth);
   };
 
   // Listen for auth state changes
   useEffect(() => {
+    if (!auth) {
+      // If Firebase isn't initialized, skip listening and allow app to render
+      setCurrentUser(null);
+      setLoading(false);
+      return undefined;
+    }
+
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
       setLoading(false);
