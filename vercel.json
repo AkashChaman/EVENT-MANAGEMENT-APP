@@ -4,13 +4,5 @@
       "source": "(.*)",
       "destination": "/index.html"
     }
-  ],
-  "env": {
-    "REACT_APP_FIREBASE_API_KEY": "AIzaSyCh5ZchlBmJmMKvaOiM0US9YyFl1egwjUw",
-    "REACT_APP_FIREBASE_AUTH_DOMAIN": "event-management-app-72250.firebaseapp.com",
-    "REACT_APP_FIREBASE_PROJECT_ID": "event-management-app-72250",
-    "REACT_APP_FIREBASE_STORAGE_BUCKET": "event-management-app-72250.firebasestorage.app",
-    "REACT_APP_FIREBASE_MESSAGING_SENDER_ID": "966479727869",
-    "REACT_APP_FIREBASE_APP_ID": "1:966479727869:web:8dcca466352d7ceaaa8294"
-  }
+  ]
 }
